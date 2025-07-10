@@ -1,0 +1,134 @@
+/* Archivo principal que importa todos los demás */
+@import url('base.css');
+@import url('layout.css');
+@import url('components.css');
+@import url('pages/home.css');
+@import url('pages/carrito.css');
+@import url('pages/sub-categorias.css');
+@import url('pages/productos.css');
+@import url('pages/contacto.css');
+@import url('pages/nosotros.css');
+@import url('pages/login.css');
+
+/* Estilos responsive generales */
+@media (max-width: 992px) {
+    .nav-links ul li {
+        margin: 0 0.5rem;
+    }
+
+    .search-container input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.6rem;
+        flex-wrap: nowrap;
+    }
+
+    .menu-icon {
+        display: block;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+        margin-right: auto;
+        margin-left: 1rem;
+    }
+
+    .nav-right {
+        order: 3;
+        width: auto;
+        justify-content: flex-end;
+        margin-top: 0;
+        display: flex !important;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #7a195a;
+        padding: 1rem;
+        box-shadow: var(--sombra);
+        display: none;
+        order: 4;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links ul li {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+
+    .nav-links ul li a {
+        color: var(--color-texto-claro);
+    }
+
+    .nav-links ul li a:hover {
+        color: var(--color-primario);
+    }
+
+    .menu-toggle:checked~.nav-links {
+        display: block;
+    }
+
+    .nav-right {
+        gap: 1rem;
+        margin-left: auto;
+        /* Empuja íconos a la derecha */
+    }
+
+    .search-container {
+        width: auto;
+        margin-right: 0.5rem;
+    }
+
+    .search-container input {
+        width: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-container {
+        width: auto;
+        margin-right: 0.5rem;
+    }
+
+    .search-container input {
+        width: 120px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+}
+
+.admin-info {
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.cerrar-sesion {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: auto;
+    /* si usas flexbox */
+}
+
+.cerrar-sesion:hover {
+    background-color: #e74c3c;
+    /* color al pasar el mouse */
+}

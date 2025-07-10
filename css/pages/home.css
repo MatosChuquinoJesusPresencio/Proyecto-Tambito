@@ -1,0 +1,453 @@
+/* Estilos específicos para home */
+.home-bg {
+    background-image: url('../../img/fondo.jpg');
+    background-attachment: fixed;
+}
+
+.hero-content {
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.main-logo {
+    width: 30vw;
+    max-width: 80%;
+    margin-bottom: 1.2rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.hero-slogan {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #FFD700;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.register-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #FFD700;
+    color: #C9209D;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.register-btn:hover {
+    background-color: #FFC000;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Contenedor del triángulo - VERSIÓN PC */
+.triangle-container {
+    position: relative;
+    width: 100%;
+    height: 20.5vw;
+    margin: 2rem auto 0;
+}
+
+.category {
+    position: absolute;
+    width: 180px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.category img {
+    width: 12vw;
+    height: 12vw;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.category span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    text-transform: uppercase;
+    background-color: rgba(201, 32, 157, 0.8);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+/* POSICIONAMIENTO */
+.side-left {
+    left: 10%;
+    top: 5%;
+    transform: translateY(-50%);
+}
+
+.side-right {
+    right: 10%;
+    top: 5%;
+    transform: translateY(-50%);
+}
+
+.mid-left {
+    left: 26.5%;
+    top: 25%;
+    transform: translateY(-50%);
+}
+
+.mid-right {
+    right: 26.5%;
+    top: 25%;
+    transform: translateY(-50%);
+}
+
+.top-center {
+    left: 50%;
+    top: 12%;
+    transform: translateX(-50%);
+}
+
+/* Efectos hover */
+.category:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.category:hover span {
+    background-color: rgba(201, 32, 157, 1);
+}
+
+/* ------------------------- */
+/* VERSIÓN 1000px */
+/* ------------------------- */
+@media (max-width: 1000px) {
+    .main-logo {
+        width: 40vw;
+    }
+
+    .category {
+        width: 150px;
+    }
+    
+    .category img {
+        width: 13vw;
+        height: 13vw;
+        border-radius: 20px;
+    }
+    
+    .side-left {
+        top: 7%;
+        left: 5%;
+    }
+    
+    .side-right{
+        top: 7%;
+        right: 5%;
+    }
+
+    .mid-left  {
+        top: 27%;
+        left: 23.5%;
+    }
+    
+    .mid-right{
+        top: 27%;
+        right: 23.5%;
+    }
+
+    .top-center {
+        top: 20%;
+    }
+}
+
+/* ------------------------- */
+/* VERSIÓN MÓVIL (768px abajo) */
+/* ------------------------- */
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: auto;
+        height: auto;
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        padding-top: 20px;
+        justify-content: flex-start;
+        padding: 0px;
+    }
+
+    .main-logo {
+        width: 70vh;
+        margin: 1rem 0;
+    }
+
+    .hero-slogan {
+        font-size: 2.2rem;
+        margin: 1rem 0;
+    }
+
+    .register-btn {
+        margin: 1.2rem 0;
+        padding: 1rem 2rem;
+        font-size: 32px;
+        margin-bottom: 3.5rem;
+    }
+
+    /* Contenedor móvil */
+    .triangle-container {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0 20px 20px;
+    }
+
+    .category {
+        position: static;
+        width: 80%;
+        max-width: 300px;
+        transform: none !important;
+        opacity: 0;
+        animation: fadeInUp 0.5s ease forwards;
+        margin-bottom: 1.5rem;
+    }
+
+    .category img {
+        width: 100%;
+        height: 200px;
+        border-radius: 25px;
+    }
+
+    .category span {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+        order: -1;
+    }
+
+    /* Animaciones para móvil */
+    .side-left { animation-delay: 0.1s; }
+    .side-right { animation-delay: 0.2s; }
+    .mid-left { animation-delay: 0.3s; }
+    .mid-right { animation-delay: 0.4s; }
+    .top-center { animation-delay: 0.5s; }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .main-logo {
+        width: 70vw;
+    }
+    
+    .hero-slogan {
+        font-size: 1.3rem;
+    }
+    
+    .register-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .category img {
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .category span {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+        order: -1;
+    }
+}
+
+/* Animación para móvil */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== PROMOCIONES ===== */
+.promo-banner {
+    width: 100%;
+    min-height: 400px;
+    background-image: url('../../img/PROMOCIONES/banner-promo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: center;
+    background-attachment: fixed;
+
+}
+
+
+.promo-section {
+    padding: 2rem 1rem;
+    background: rgba(255, 255, 255, 0.137);
+    text-align: center;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Título responsive */
+    color: white;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.static-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0.5rem 2rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Scrollbar personalizada */
+.static-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.static-carousel::-webkit-scrollbar-thumb {
+    background: var(--color-primario);
+    border-radius: 10px;
+}
+
+/* Tarjetas */
+.promo-card {
+    scroll-snap-align: start;
+    min-width: 85%; /* Móvil: ocupa 85% del ancho */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+}
+
+.promo-img {
+    width: 100%;
+    height: 180px; /* Altura fija para móvil */
+    object-fit: cover;
+    display: block;
+}
+
+/* Badge de descuento */
+.promo-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+/* Overlay y texto */
+.promo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    text-align: center;
+}
+
+.promo-text {
+    color: white;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin: 0 0 0.5rem 0;
+}
+
+.promo-btn {
+    background: var(--color-primario);
+    color: var(--color-secundario);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.promo-btn:hover {
+    background: white;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+    .static-carousel {
+        gap: 2rem;
+        padding: 1.5rem 2rem 2.5rem;
+    }
+
+    .promo-card {
+        min-width: calc(50% - 1rem); /* 2 tarjetas por fila */
+        height: 250px;
+    }
+
+    .promo-img {
+        height: 250px;
+    }
+}
+
+/* Desktop (992px+) */
+@media (min-width: 992px) {
+    .promo-card {
+        min-width: calc(33.333% - 1.5rem); /* 3 tarjetas por fila */
+    }
+
+    .promo-section {
+        padding: 3rem 2rem;
+    }
+}
+
+/* Pantallas grandes (1200px+) */
+@media (min-width: 1200px) {
+    .static-carousel {
+        justify-content: center;
+        overflow-x: visible; /* Desactiva scroll en desktop */
+        flex-wrap: wrap; /* Asegura múltiples filas si hay muchas promos */
+    }
+
+    .promo-card {
+        min-width: 280px; /* Ancho fijo */
+        flex-grow: 1; /* Distribuye el espacio */
+    }
+}

@@ -1,0 +1,444 @@
+/* CONTACTO.CSS - Estilos Mejorados */
+
+.contact-bg {
+    background-image: url('../../img/fondo.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Estilos generales para todas las secciones de contenido dentro del hero-content */
+.contact-section,
+.feedback-section,
+.join-team-section {
+    padding: 60px 4%;
+    margin-bottom: 40px;
+    color: var(--color-texto-claro);
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-section h2,
+.feedback-section h2,
+.join-team-section h2 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 3.5rem;
+    color: var(--color-primario);
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.section-description {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* SECCIÓN DE INFORMACIÓN DE CONTACTO */
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-details,
+.map-container {
+    flex: 1;
+    min-width: 320px;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--color-texto-claro);
+    display: flex;
+    align-items: center;
+}
+
+.contact-details p strong {
+    color: var(--color-primario);
+    margin-right: 8px;
+}
+
+.contact-details a {
+    color: var(--color-secundario);
+    text-decoration: none;
+    transition: color var(--transicion);
+}
+
+.contact-details a:hover {
+    color: var(--color-primario);
+    text-decoration: underline;
+}
+
+.map-container h3 {
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mapa {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 8px;
+}
+
+
+/* ESTILOS DE FORMULARIO (Comentarios y Solicitud) */
+.contact-form,
+.application-form {
+    background-color: rgba(255, 255, 255, 0.24);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    box-shadow: var(--sombra);
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 280px;
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-primario);
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-texto-claro);
+    font-size: 1rem;
+    transition: all var(--transicion);
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="tel"]::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group textarea:focus {
+    border-color: var(--color-secundario);
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px rgba(var(--color-secundario-rgb), 0.5);
+    outline: none;
+}
+
+.btn-submit {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    padding: 15px 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color var(--transicion), transform var(--transicion), box-shadow var(--transicion);
+    display: block;
+    width: fit-content;
+    margin: 35px auto 0 auto;
+    text-transform: uppercase;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-submit:hover {
+    background-color: var(--color-primario);
+    color: #333;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* SECCIÓN "ÚNETE AL EQUIPO" */
+.join-team-section {
+    padding-bottom: 80px;
+}
+
+.join-team-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.join-team-text {
+    flex: 2;
+    min-width: 350px;
+    text-align: left;
+}
+
+.join-team-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--color-primario);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.join-team-text p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.join-team-image {
+    flex: 1;
+    min-width: 280px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.join-team-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transicion);
+}
+
+.join-team-image img:hover {
+    transform: scale(1.03);
+}
+
+/* RESPONSIVE DESIGN - Ajustes finos */
+@media (max-width: 1024px) {
+    .contact-section h2,
+    .feedback-section h2,
+    .join-team-section h2 {
+        font-size: 3rem;
+    }
+    .join-team-text h2 {
+        font-size: 2.5rem;
+    }
+    .join-team-content {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section,
+    .feedback-section,
+    .join-team-section {
+        padding: 40px 3%;
+        margin-bottom: 30px;
+    }
+
+    .contact-section h2,
+    .feedback-section h2,
+    .join-team-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+    .join-team-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .contact-details,
+    .map-container {
+        width: 95%;
+        min-width: auto;
+        padding: 25px;
+    }
+
+    .contact-details p {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .mapa iframe {
+        height: 250px;
+    }
+
+    .contact-form,
+    .application-form {
+        padding: 30px;
+        margin-top: 30px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-row .form-group {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+
+    .btn-submit {
+        padding: 12px 25px;
+        font-size: 1.05rem;
+        margin: 25px auto 0 auto;
+    }
+
+    .join-team-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        padding: 30px;
+    }
+
+    .join-team-text,
+    .join-team-image {
+        min-width: auto;
+        width: 100%;
+        text-align: center;
+    }
+
+    .join-team-text p {
+        font-size: 1.1rem;
+    }
+
+    .join-team-image img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section h2,
+    .feedback-section h2,
+    .join-team-section h2 {
+        font-size: 2rem;
+    }
+    .join-team-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .contact-section,
+    .feedback-section,
+    .join-team-section {
+        padding: 30px 2%;
+    }
+
+    .contact-details,
+    .map-container,
+    .contact-form,
+    .application-form,
+    .join-team-content {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .mapa iframe {
+        height: 200px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+
+    .btn-submit {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .join-team-image img {
+        max-width: 90%;
+    }
+}

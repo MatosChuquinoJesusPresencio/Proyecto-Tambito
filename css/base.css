@@ -1,0 +1,23 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #ffd900;
+    --color-secundario: #bb01a2;
+    --color-texto: #333;
+    --color-texto-claro: #fff;
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transicion: all 0.3s ease;
+}
+
+body {
+    min-height: 100vh;
+    padding-top: 60px;
+    font-family: Arial, sans-serif;
+    color: var(--color-texto);
+}
+
