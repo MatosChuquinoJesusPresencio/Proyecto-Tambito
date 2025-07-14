@@ -330,6 +330,42 @@ button:active {
   transform: translateY(0);
 }
 
+.cerrar-sesion {
+    padding: 15px 20px;
+    color: white;
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    background-color: #e42d19;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cerrar-sesion::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #e43320, transparent);
+  transition: left 0.5s;
+}
+
+
+.cerrar-sesion:hover {
+    background: linear-gradient(45deg, #f73f2a, #d11500);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
 @media screen and (max-width: 1024px) {
   .sidebar-admin {
     width: 240px;

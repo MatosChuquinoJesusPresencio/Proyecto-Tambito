@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/validaciones.js"></script>
-
 </head>
 
 <body>
@@ -16,7 +15,7 @@
     <main class="registro-main">
         <div class="login-container" style="max-width: 500px;">
             <!-- Botón de retroceso -->
-            <a href="login.html" class="btn-back">
+            <a href="login.php" class="btn-back">
                 <i class="fas fa-arrow-left"></i>
             </a>
 
@@ -25,6 +24,17 @@
                 <img src="img/logo.svg" alt="Logo" class="login-logo">
                 <h1>Crear Cuenta</h1>
             </div>
+
+            <?php
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+
+            if (isset($_SESSION['error_message_registro'])) {
+                echo '<div class="message-container error-message">' . $_SESSION['error_message_registro'] . '</div>';
+                unset($_SESSION['error_message_registro']);
+            }
+            ?>
 
             <!-- Formulario -->
             <form class="login-form" action="guardar_usuario.php" method="POST" onsubmit="return validarRegistro()">
@@ -89,7 +99,7 @@
             </form>
 
             <div class="login-footer">
-                <p>¿Ya tienes cuenta? <a href="login.html" class="register-link">Inicia Sesión</a></p>
+                <p>¿Ya tienes cuenta? <a href="login.php" class="register-link">Inicia Sesión</a></p>
             </div>
         </div>
     </main>

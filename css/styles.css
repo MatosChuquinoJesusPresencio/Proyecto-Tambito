@@ -112,23 +112,6 @@
 
 .admin-info {
     color: white;
-    font-size: 14px;
-    margin-left: 10px;
-    margin-top: 5px;
-}
-
-.cerrar-sesion {
-    display: block;
-    padding: 10px 15px;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: auto;
-    /* si usas flexbox */
-}
-
-.cerrar-sesion:hover {
-    background-color: #e74c3c;
-    /* color al pasar el mouse */
+    font-size: 1rem;
+    padding-bottom: 10px;
 }

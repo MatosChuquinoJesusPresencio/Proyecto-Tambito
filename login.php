@@ -22,6 +22,22 @@
                 <h1>Bienvenido de vuelta</h1>
             </div>
 
+            <?php
+            if (session_status() == PHP_SESSION_NONE) {
+                session_start();
+            }
+
+            if (isset($_SESSION['success_message_login'])) {
+                echo '<div class="message-container success-message">' . $_SESSION['success_message_login'] . '</div>';
+                unset($_SESSION['success_message_login']);
+            }
+
+            if (isset($_SESSION['error_message'])) {
+                echo '<div class="message-container error-message">' . $_SESSION['error_message'] . '</div>';
+                unset($_SESSION['error_message']);
+            }
+            ?>
+
             <form class="login-form" action="validar_usuario.php" method="POST" onsubmit="return validarLogin()">
                 <div class="input-group">
                     <label for="email">Correo electrónico</label>
@@ -38,12 +54,12 @@
                 <button type="submit" class="btn-login">Ingresar</button>
 
                 <div class="login-options">
-                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <a href="recuperar_contraseña_paso1.php" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 </div>
             </form>
 
             <div class="login-footer">
-                <p>¿No tienes cuenta? <a href="registro.html" class="register-link">Regístrate aquí</a></p>
+                <p>¿No tienes cuenta? <a href="registro.php" class="register-link">Regístrate aquí</a></p>
             </div>
         </div>
     </main>

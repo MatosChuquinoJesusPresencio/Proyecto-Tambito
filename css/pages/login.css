@@ -21,12 +21,12 @@
 /* Logo - Ajusta según tu necesidad */
 .login-logo {
     height: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 /* Formulario */
 .login-form {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .input-group {
@@ -136,6 +136,31 @@
 
 .forgot-password:hover {
     color: var(--color-secundario);
+}
+
+.error-message {
+    color: #d9534f;
+    background-color: #f2dede;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+    padding: 10px 15px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.message-container {
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.success-message {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border: 1px solid #d6e9c6;
+    padding: 10px;
+    text-align: center;
 }
 
 /* Responsive */

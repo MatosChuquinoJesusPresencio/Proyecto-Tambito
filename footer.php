@@ -34,7 +34,7 @@
                 <div class="footer-column">
                     <p>Mi cuenta</p>
                     <a href="categorias.php">Pedir</a>
-                    <a href="login.html">Iniciar Sesión</a>
+                    <a href="login.php">Iniciar Sesión</a>
                 </div>
             </div>
 

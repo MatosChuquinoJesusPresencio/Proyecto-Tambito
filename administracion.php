@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
-    header("Location: login.html");
+    header("Location: login.php");
     exit();
 }
 ?>
@@ -47,9 +47,9 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
 
       <h2>Admin. Secciones</h2>
 
-      <p class="admin-info">
+      <h3 class="admin-info">
         Bienvenido, <?php echo $_SESSION['nombre']; ?>
-      </p>
+      </h3>
 
 
       <nav>

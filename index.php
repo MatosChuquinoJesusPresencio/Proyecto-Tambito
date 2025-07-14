@@ -18,7 +18,7 @@
             <div class="hero-content">
                 <img src="img/logo.svg" alt="Tambo" class="main-logo">
                 <h2 class="hero-slogan" id="hero-slogan">CADA VEZ MÁS CERCA</h2>
-                <a href="registro.html" class="register-btn">Registrarse</a>
+                <a href="registro.php" class="register-btn">Registrarse</a>
 
                 <div class="triangle-container">
                     <div class="category side-left">

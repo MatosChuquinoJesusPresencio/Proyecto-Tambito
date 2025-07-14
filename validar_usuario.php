@@ -30,10 +30,16 @@ if ($result->num_rows === 1) {
         }
         exit();
     } else {
-        echo "❌ Contraseña incorrecta. <a href='login.html'>Intentar de nuevo</a>";
+        // Contraseña incorrecta: Almacenar mensaje en sesión y redirigir
+        $_SESSION['error_message'] = "❌ Contraseña incorrecta. Por favor, inténtalo de nuevo.";
+        header("Location: login.php"); // Redirige de vuelta a login.php
+        exit();
     }
 } else {
-    echo "❌ Usuario no encontrado. <a href='login.html'>Intentar de nuevo</a>";
+    // Usuario no encontrado: Almacenar mensaje en sesión y redirigir
+    $_SESSION['error_message'] = "❌ Usuario no encontrado. Por favor, inténtalo de nuevo.";
+    header("Location: login.php"); // Redirige de vuelta a login.php
+    exit();
 }
 
 $conn->close();
