@@ -48,7 +48,7 @@
 /* Contenedor de búsqueda (Desktop) */
 .search-container {
     position: relative;
-    margin-right: 1.5rem;
+    margin-right: 0.5rem;
     display: flex;
     align-items: center;
 }
@@ -101,7 +101,6 @@
     .search-container i {
         position: static;
         transform: none;
-        padding: 0.5rem;
         font-size: 1.3rem;
     }
 
@@ -118,6 +117,7 @@
     cursor: pointer;
     transition: var(--transicion);
     transform: scale(1);
+    margin-left: 1.5rem;
     display: inline-block;
 }
 
@@ -125,20 +125,6 @@
     color: var(--color-primario);
     transform: scale(1.2);
 }
-
-.login-icon i {
-    font-size: 1.2rem;
-    color: var(--color-texto-claro);
-    cursor: pointer;
-    transition: var(--transicion);
-    margin-left: 1.5rem; /* Espacio entre carrito y login */
-}
-
-.login-icon i:hover {
-    color: var(--color-primario);
-    transform: scale(1.2);
-}
-
 
 /* Menú hamburguesa */
 .menu-toggle {

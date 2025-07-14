@@ -80,14 +80,13 @@
     }
 
     .nav-right {
-        gap: 1rem;
         margin-left: auto;
         /* Empuja íconos a la derecha */
     }
 
     .search-container {
         width: auto;
-        margin-right: 0.5rem;
+        margin-right: 0rem;
     }
 
     .search-container input {
@@ -98,7 +97,7 @@
 @media (max-width: 576px) {
     .search-container {
         width: auto;
-        margin-right: 0.5rem;
+        margin-right: 0rem;
     }
 
     .search-container input {

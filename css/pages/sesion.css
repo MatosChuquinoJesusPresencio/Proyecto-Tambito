@@ -1,0 +1,116 @@
+/* Estilos para el icono de usuario logueado y su menú desplegable */
+.login-icon {
+    position: relative; /* Para posicionar el menú desplegable */
+    cursor: pointer;
+}
+
+.login-icon .login-link { /* Estilo para el icono cuando no está logueado */
+    display: flex;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: var(--transicion);
+    margin-left: 1.5rem;
+}
+
+.login-icon .login-link:hover {
+    color: var(--color-primario);
+    transform: scale(1.1);
+}
+
+.login-icon .user-name-display {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white; /* Color del texto del nombre de usuario */
+    cursor: pointer;
+    background-color: transparent; /* Fondo transparente por defecto */
+    border-radius: 5px;
+    margin-left: 1.5rem;
+    transition: var(--transicion);
+}
+
+.login-icon .user-name-display:hover {
+    color: var(--color-primario);
+    transform: scale(1.1);
+}
+
+.login-icon .user-dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%; /* Debajo del nombre de usuario */
+    right: 0;
+    background-color: #a3087c;
+    border: 1px solid var(--color-primario);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+    padding-top: 15px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* No interactuable cuando está oculto */
+}
+
+.login-icon .user-dropdown-menu.active {
+    display: block; /* Mostrar cuando está activo */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto; /* Interactuable cuando está activo */
+}
+
+.user-dropdown-menu p {
+    padding: 5px 20px;
+    margin: 0;
+    color: var(--color-primario);
+    font-size: 0.9em;
+    line-height: 1.3;
+}
+
+.user-dropdown-menu p strong {
+    font-size: 1.1em;
+    color: var(--color-primario);
+}
+
+.user-dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.2s ease;
+    border-radius: 5px;
+}
+
+.user-dropdown-menu .dropdown-item:hover {
+    background-color: red;
+}
+
+.user-dropdown-menu .dropdown-item i {
+    margin-right: 10px;
+    color: #888;
+}
+
+.user-dropdown-menu .logout-btn {
+    border-top: 1px solid var(--color-primario); /* Separador para el botón de cerrar sesión */
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #ffffff;
+    transition: var(--transicion);
+}
+
+.user-dropdown-menu .logout-btn:hover{
+    color: rgb(224, 224, 224);
+}
+
+.user-dropdown-menu .logout-btn i {
+    color: #ffffff;
+    transition: var(--transicion);
+}
+
+.user-dropdown-menu .logout-btn i:hover{
+    color: rgb(224, 224, 224);
+}

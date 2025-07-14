@@ -1,16 +1,21 @@
-<!-- header.php -->
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Home | Tambo+</title>
+    <title>Inicio | Tambo+</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages/sesion.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
+    <?php
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+    }
+    ?>
     <header class="header">
         <nav class="navbar">
             <div class="logo">
@@ -60,10 +65,66 @@
                 </div>
 
                 <div class="login-icon">
-                    <a href="login.php" class="login-icon">
-                        <i class="fas fa-user"></i>
-                    </a>
+                    <?php
+                    // Verificar si el usuario está logueado
+                    if (isset($_SESSION['id'])) {
+                        // Si el usuario tiene rol 'usuario', mostrar el menú desplegable
+                        if ($_SESSION['rol'] === 'usuario') {
+                    ?>
+                            <div class="user-menu-container">
+                                <span class="user-name-display">
+                                    <i class="fas fa-user"></i>
+                                    <?php echo htmlspecialchars(strtok($_SESSION['nombre'], ' ') ); ?>
+                                </span>
+                                <div class="user-dropdown-menu">
+                                    <p>Hola, <br><strong><?php echo htmlspecialchars($_SESSION['nombre'] . ' ' . $_SESSION['apellido']); ?></strong></p>
+                                    <a href="logout.php" class="dropdown-item logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                                </div>
+                            </div>
+                        <?php
+                        } else if ($_SESSION['rol'] === 'admin') {
+                            // Si el usuario es 'admin', redirigir al panel de administración
+                        ?>
+                            <a href="administracion.php" class="user-name-display">
+                                <i class="fas fa-user"></i>
+                                <span>Admin</span>
+                            </a>
+                        <?php
+                        }
+                    } else {
+                        // Si el usuario NO está logueado, mostrar el enlace normal de inicio de sesión
+                        ?>
+                        <a href="login.php" class="login-link">
+                            <i class="fas fa-user"></i>
+                        </a>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </nav>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userMenuContainer = document.querySelector('.user-menu-container');
+            if (userMenuContainer) {
+                const userNameDisplay = userMenuContainer.querySelector('.user-name-display');
+                const userDropdownMenu = userMenuContainer.querySelector('.user-dropdown-menu');
+
+                userNameDisplay.addEventListener('click', function() {
+                    userDropdownMenu.classList.toggle('active');
+                });
+
+                // Cerrar el menú si se hace clic fuera de él
+                document.addEventListener('click', function(event) {
+                    if (!userMenuContainer.contains(event.target)) {
+                        userDropdownMenu.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -20,6 +20,7 @@ if ($result->num_rows === 1) {
         // Crear sesión
         $_SESSION['id'] = $usuario['id'];
         $_SESSION['nombre'] = $usuario['nombre'];
+        $_SESSION['apellido'] = $usuario['apellido']; // ¡Se añade el apellido a la sesión!
         $_SESSION['rol'] = $usuario['rol'];
 
         // Redirigir según el rol
