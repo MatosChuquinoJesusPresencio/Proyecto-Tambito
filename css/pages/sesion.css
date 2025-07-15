@@ -96,7 +96,7 @@
 
 .user-dropdown-menu .logout-btn {
     border-top: 1px solid var(--color-primario); /* Separador para el botón de cerrar sesión */
-    margin-top: 10px;
+    margin-top: 5px;
     padding-top: 10px;
     color: #ffffff;
     transition: var(--transicion);
@@ -112,5 +112,25 @@
 }
 
 .user-dropdown-menu .logout-btn i:hover{
+    color: rgb(224, 224, 224);
+}
+
+.user-dropdown-menu .perfil-btn {
+    padding-top: 10px;
+    color: #ffffff;
+    transition: var(--transicion);
+}
+
+.user-dropdown-menu .perfil-btn:hover{
+    color: rgb(224, 224, 224);
+    background-color: rgba(0, 0, 0, 0.192);
+}
+
+.user-dropdown-menu .perfil-btn i {
+    color: #ffffff;
+    transition: var(--transicion);
+}
+
+.user-dropdown-menu .perfil-btn i:hover{
     color: rgb(224, 224, 224);
 }

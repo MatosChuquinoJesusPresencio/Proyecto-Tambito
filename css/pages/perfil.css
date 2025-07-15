@@ -1,0 +1,259 @@
+.perfil-bg {
+    background-image: url('../../img/fondo.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.perfil-main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.profile-container {
+    background-color: rgba(255, 255, 255, 0.123);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.profile-container h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 15px;
+}
+
+
+.profile-actions {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 15px; 
+    margin-bottom: 30px;
+}
+
+.btn-action {
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 12px 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none; 
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-action:hover {
+    background-color: #e0e0e0;
+    border-color: #ccc;
+    color: var(--color-primario);
+    transform: translateY(-2px);
+}
+
+.btn-action.active-btn {
+    background-color: var(--color-secundario); 
+    color: white;
+    border-color: var(--color-primario);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action.active-btn:hover {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Secciones de Contenido (Ver Perfil, Editar Perfil, Cambiar Contraseña) */
+.profile-section {
+    display: none; 
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #0000004f;
+}
+
+.profile-section.active-section {
+    display: block; 
+}
+
+/* Estilos para la sección de Ver Perfil */
+.profile-info-group {
+    margin-bottom: 15px;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.profile-info-group:last-child {
+    border-bottom: none;
+}
+
+.profile-info-group strong {
+    color: var(--color-primario);
+    display: inline-block;
+    min-width: 150px; /* Alinea las etiquetas */
+    font-size: 1.1em;
+}
+
+.profile-info-group span {
+    color: #ffffff;
+    font-size: 1.1em;
+}
+
+
+/* Estilos para formularios (Editar Perfil y Cambiar Contraseña) */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(var(--color-primario-rgb), 0.2);
+    outline: none;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-update {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-update:hover {
+    background-color: var(--color-primario-oscuro);
+    transform: translateY(-2px);
+}
+
+/* Mensajes de feedback (éxito/error) */
+.message-container {
+    padding: 15px 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    border: 1px solid transparent;
+    font-size: 1em;
+}
+
+.message-container.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message-container.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 25px 20px;
+        margin: 15px;
+    }
+
+    .profile-container h1 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-action {
+        width: 100%; 
+        padding: 10px 15px;
+    }
+
+    .profile-info-group strong {
+        min-width: 100px;
+        font-size: 1em;
+    }
+
+    .profile-info-group span {
+        font-size: 1em;
+        word-break: break-word; 
+    }
+
+    .form-group input {
+        width: calc(100% - 20px);
+    }
+
+    .btn-update {
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 20px 15px;
+    }
+
+    .profile-container h1 {
+        font-size: 1.6em;
+    }
+}
