@@ -1,24 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('api/contacto.php')
-        .then(res => res.json())
-        .then(data => {
-            if (data.contacto) {
-                document.getElementById('contacto-telefono').textContent = data.contacto.telefono;
-                document.getElementById('contacto-email').textContent = data.contacto.email;
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("routes/router.php?accion=listar_contacto")
+    .then(res => res.json())
+    .then(data => {
+      const info = data.info;
+      const redes = data.redes;
+  
+      if (info) {
+        document.getElementById("contacto-horario").textContent = info.horario_atencion;
+        document.getElementById("contacto-telefono").textContent = info.telefono;
+        document.getElementById("contacto-email").textContent = info.email;
+      }
 
-                document.getElementById('contacto-instagram-link').href = data.contacto.instagram_url;
-                document.getElementById('contacto-instagram-text').textContent = data.contacto.instagram_text;
+      redes.forEach(red => {
+        const nombre = red.nombre.toLowerCase(); 
 
-                document.getElementById('contacto-facebook-link').href = data.contacto.facebook_url;
-                document.getElementById('contacto-facebook-text').textContent = data.contacto.facebook_text;
+        const linkEl = document.getElementById(`contacto-${nombre}-link`);
+        const textEl = document.getElementById(`contacto-${nombre}-text`);
 
-                document.getElementById('contacto-tiktok-link').href = data.contacto.tiktok_url;
-                document.getElementById('contacto-tiktok-text').textContent = data.contacto.tiktok_text;
-
-                document.getElementById('contacto-horario').textContent = data.contacto.horario;
-            }
-        })
-        .catch(err => {
-            console.error('Error fetching contact data:', err);
-        });
+        if (linkEl) linkEl.href = red.url;
+        if (textEl) textEl.textContent = red.texto_visible;
+      });
+    })
+    .catch(err => {
+      console.error("⛔ Error al cargar contacto:", err);
+    });
 });

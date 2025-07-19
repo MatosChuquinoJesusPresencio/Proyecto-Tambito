@@ -10,7 +10,7 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Administracion | Tambo</title>
