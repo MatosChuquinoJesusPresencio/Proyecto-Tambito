@@ -1,30 +1,22 @@
-document.addEventListener('DOMContentLoaded', function() {
-    fetch('api/inicio.php')
-        .then(res => res.json())
-        .then(data => {
-            if (data) {
-                // Actualizar eslogan
-                document.getElementById('hero-slogan').textContent = data.eslogan;
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("routes/router.php?accion=obtener_datos_inicio")
+    .then(res => res.json())
+    .then(data => {
 
-                // Actualizar categorías
-                const categoriasDestacadas = data.categorias_destacadas;
-                const categoriaElements = [
-                    { spanId: 'categoria-comidas-span', imgId: 'categoria-comidas-img' },
-                    { spanId: 'categoria-bebidas-span', imgId: 'categoria-bebidas-img' },
-                    { spanId: 'categoria-antojos-span', imgId: 'categoria-antojos-img' },
-                    { spanId: 'categoria-despensa-span', imgId: 'categoria-despensa-img' },
-                    { spanId: 'categoria-helado-span', imgId: 'categoria-helado-img' }
-                ];
+      const esloganEl = document.getElementById("hero-slogan");
+      if (esloganEl && data.slogan) esloganEl.textContent = data.slogan;
 
-                categoriasDestacadas.forEach((cat, index) => {
-                    if (categoriaElements[index]) {
-                        document.getElementById(categoriaElements[index].spanId).textContent = cat.nombre;
-                        document.getElementById(categoriaElements[index].imgId).src = cat.imagen_url;
-                    }
-                });
-            }
-        })
-        .catch(err => {
-            console.error('Error al cargar los datos de inicio:', err);
+      if (Array.isArray(data.categorias)) {
+        data.categorias.forEach((cat, i) => {
+          const span = document.getElementById(`categoria${i + 1}-span`);
+          const img = document.getElementById(`categoria${i + 1}-img`);
+
+          if (span) span.textContent = cat.titulo;
+          if (img) img.src = cat.imagen_url + "?v=" + Date.now();
         });
+      }
+    })
+    .catch(err => {
+      console.error("❌ Error al cargar inicio:", err);
+    });
 });

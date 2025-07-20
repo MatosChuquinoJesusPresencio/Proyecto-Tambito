@@ -7,6 +7,8 @@
     <title>Inicio | Tambo+</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="js/inicio.js"></script>
+    <script>console.log("Inicio.js cargado correctamente");</script>
 </head>
 
 
@@ -22,26 +24,26 @@
 
                 <div class="triangle-container">
                     <div class="category side-left">
-                        <span id="categoria-comidas-span">COMIDAS</span>
-                        <img id="categoria-comidas-img" src="img/comidas.png" alt="Comidas">
+                        <span id="categoria1-span">COMIDAS</span>
+                        <img id="categoria1-img" src="img/comidas.png" alt="Comidas">
                     </div>
                     <div class="category side-right">
-                        <span id="categoria-bebidas-span">BEBIDAS</span>
-                        <img id="categoria-bebidas-img" src="img/bebidas.webp" alt="Bebidas">
+                        <span id="categoria2-span">BEBIDAS</span>
+                        <img id="categoria2-img" src="img/bebidas.webp" alt="Bebidas">
                     </div>
 
                     <div class="category mid-left">
-                        <span id="categoria-antojos-span">ANTOJOS</span>
-                        <img id="categoria-antojos-img" src="img/antojos.png" alt="Antojos">
+                        <span id="categoria3-span">ANTOJOS</span>
+                        <img id="categoria3-img" src="img/antojos.png" alt="Antojos">
                     </div>
                     <div class="category mid-right">
-                        <span id="categoria-despensa-span">DESPENSA</span>
-                        <img id="categoria-despensa-img" src="img/despensa.webp" alt="Despensa">
+                        <span id="categoria4-span">DESPENSA</span>
+                        <img id="categoria4-img" src="img/despensa.webp" alt="Despensa">
                     </div>
 
                     <div class="category top-center">
-                        <span id="categoria-helado-span">HELADO</span>
-                        <img id="categoria-helado-img" src="img/helado.png" alt="Helado">
+                        <span id="categoria5-span">HELADO</span>
+                        <img id="categoria5-img" src="img/helado.png" alt="Helado">
                     </div>
                 </div>
             </div>
@@ -136,9 +138,6 @@
     </main>
 
     <?php include 'footer.php'; ?>
-
-    <script src="js/inicio.js"></script>
-
 </body>
 
 </html>

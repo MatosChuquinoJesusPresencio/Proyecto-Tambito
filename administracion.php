@@ -83,43 +83,43 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
             <h2>Editar Categorías Destacadas</h2>
 
             <div class="tipo-categoria">
-              <label for="admin-categoria-1-nombre">Categoría 1 (Nombre):</label>
-              <input type="text" id="admin-categoria-1-nombre" placeholder="Comidas">
-              <label for="admin-categoria-1-imagen">Categoría 1 (Imagen):</label>
-              <input type="file" id="admin-categoria-1-imagen" accept="image/*">
-              <input type="hidden" id="admin-categoria-1-imagen-actual" value="">
+              <label for="categoria1-nombre">Categoría 1 (Nombre):</label>
+              <input type="text" id="categoria1-nombre" placeholder="Comidas">
+              <label for="categoria1-imagen">Categoría 1 (Imagen):</label>
+              <input type="file" id="categoria1-imagen" accept="image/*">
+              <input type="hidden" id="categoria1-imagen-actual" value="">
             </div>
 
             <div class="tipo-categoria">
-              <label for="admin-categoria-2-nombre">Categoría 2 (Nombre):</label>
-              <input type="text" id="admin-categoria-2-nombre" placeholder="Antojos">
-              <label for="admin-categoria-2-imagen">Categoría 2 (Imagen):</label>
-              <input type="file" id="admin-categoria-2-imagen" accept="image/*">
-              <input type="hidden" id="admin-categoria-2-imagen-actual" value="">
+              <label for="categoria2-nombre">Categoría 2 (Nombre):</label>
+              <input type="text" id="categoria2-nombre" placeholder="Antojos">
+              <label for="categoria2-imagen">Categoría 2 (Imagen):</label>
+              <input type="file" id="categoria2-imagen" accept="image/*">
+              <input type="hidden" id="categoria2-imagen-actual" value="">
             </div>
 
             <div class="tipo-categoria">
-              <label for="admin-categoria-3-nombre">Categoría 3 (Nombre):</label>
-              <input type="text" id="admin-categoria-3-nombre" placeholder="Helados">
-              <label for="admin-categoria-3-imagen">Categoría 3 (Imagen):</label>
-              <input type="file" id="admin-categoria-3-imagen" accept="image/*">
-              <input type="hidden" id="admin-categoria-3-imagen-actual" value="">
+              <label for="categoria3-nombre">Categoría 3 (Nombre):</label>
+              <input type="text" id="categoria3-nombre" placeholder="Helados">
+              <label for="categoria3-imagen">Categoría 3 (Imagen):</label>
+              <input type="file" id="categoria3-imagen" accept="image/*">
+              <input type="hidden" id="categoria3-imagen-actual" value="">
             </div>
 
             <div class="tipo-categoria">
-              <label for="admin-categoria-4-nombre">Categoría 4 (Nombre):</label>
-              <input type="text" id="admin-categoria-4-nombre" placeholder="Despensa">
-              <label for="admin-categoria-4-imagen">Categoría 4 (Imagen):</label>
-              <input type="file" id="admin-categoria-4-imagen" accept="image/*">
-              <input type="hidden" id="admin-categoria-4-imagen-actual" value="">
+              <label for="categoria4-nombre">Categoría 4 (Nombre):</label>
+              <input type="text" id="categoria4-nombre" placeholder="Despensa">
+              <label for="categoria4-imagen">Categoría 4 (Imagen):</label>
+              <input type="file" id="categoria4-imagen" accept="image/*">
+              <input type="hidden" id="categoria4-imagen-actual" value="">
             </div>
 
             <div class="tipo-categoria">
-              <label for="admin-categoria-5-nombre">Categoría 5 (Nombre):</label>
-              <input type="text" id="admin-categoria-5-nombre" placeholder="Bebidas">
-              <label for="admin-categoria-5-imagen">Categoría 5 (Imagen):</label>
-              <input type="file" id="admin-categoria-5-imagen" accept="image/*">
-              <input type="hidden" id="admin-categoria-5-imagen-actual" value="">
+              <label for="categoria5-nombre">Categoría 5 (Nombre):</label>
+              <input type="text" id="categoria5-nombre" placeholder="Bebidas">
+              <label for="categoria5-imagen">Categoría 5 (Imagen):</label>
+              <input type="file" id="categoria5-imagen" accept="image/*">
+              <input type="hidden" id="categoria5-imagen-actual" value="">
             </div>
 
             <div class="boton-admin">
