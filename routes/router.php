@@ -2,9 +2,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$accion = $_GET['accion'] ?? ''; 
+$accion = $_GET['accion'] ?? '';
 
-switch ($accion) { 
+switch ($accion) {
     case 'listar_nosotros':
         require_once '../controllers/NosotrosController.php';
         $controlador = new NosotrosController();
@@ -16,7 +16,7 @@ switch ($accion) {
         $controlador = new NosotrosController();
         $controlador->guardar();
         break;
-    
+
     case 'listar_contacto':
         require_once '../controllers/ContactoController.php';
         $controlador = new ContactoController();
@@ -32,7 +32,7 @@ switch ($accion) {
     case 'modificar_categoria':
         require_once '../controllers/CategoriaController.php';
         $controlador = new CategoriaController();
-        $controlador->modificar();
+        $controlador->renombrar();
         break;
 
     case 'listar_categorias':
@@ -40,7 +40,25 @@ switch ($accion) {
         $controlador = new CategoriaController();
         $controlador->listar();
         break;
-        
+
+    case 'guardar_producto':
+        require_once '../controllers/CategoriaController.php';
+        $controlador = new CategoriaController();
+        $controlador->guardarProducto();
+        break;
+
+    case 'actualizar_producto':
+        require_once '../controllers/CategoriaController.php';
+        $controlador = new CategoriaController();
+        $controlador->actualizarProducto();
+        break;
+
+    case 'eliminar_producto':
+        require_once '../controllers/CategoriaController.php';
+        $controlador = new CategoriaController();
+        $controlador->eliminarProducto();
+        break;
+
     case 'guardar_config':
         require_once '../controllers/InicioController.php';
         $controlador = new InicioController();
@@ -58,7 +76,7 @@ switch ($accion) {
         $controlador = new InicioController();
         $controlador->obtener_datos_inicio();
         break;
-        
+
     default:
         header('Content-Type: application/json');
         echo json_encode([

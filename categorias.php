@@ -21,7 +21,7 @@
     </main>
 
     <?php include 'footer.php'; ?>
-    <script src="js/categorias.js"></script>
+    <script src="js/render_categorias.js"></script>
     <script src="js/modal.js" defer></script>
 </body>
 

@@ -21,7 +21,7 @@ function renderizarProductos(data) {
 
     const header = `
       <div class="category-header">
-        <h2 class="category-title">Productos de Categoría ${categoria}</h2>
+        <h2 class="category-title">${categoria}</h2>
       </div>
     `;
 
@@ -64,7 +64,7 @@ function renderizarProductos(data) {
 }
 
 function cargarYRenderizar() {
-  fetch('api/categorias.php')
+  fetch('api/render.php')
     .then(res => res.json())
     .then(data => {
       console.log("📦 Datos cargados desde JSON:", data);

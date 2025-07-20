@@ -18,9 +18,7 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
   <link rel="stylesheet" href="css/pages/administracion.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="js/guardarNosotros.js"></script>
-  <script src="js/guardar_categorias.js"></script>
-  <script src="js/admin-productos.js" defer></script>
-  <script src="js/actualizar_productos.js" defer></script>
+  <script src="js/admin_categorias.js"></script>
   <script src="js/guardarInicio.js"></script>
   <script src="js/guardarContacto.js"></script>
 </head>
@@ -282,7 +280,7 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
 
           <div class="producto-campo">
             <h3 class="subsubtitulo">Precio:</h3>
-            <input type="text" id="modificar-precio" placeholder="Precio del producto">
+            <input type="number" id="modificar-precio" placeholder="Precio del producto">
           </div>
 
           <div class="producto-campo">
@@ -291,7 +289,7 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
           </div>
 
           <div class="boton-admin">
-            <button class="borrar-producto">Borrar Producto</button>
+            <button id="eliminar-producto" class="borrar-producto">Borrar Producto</button>
             <button id="guardar-cambios-producto" class="save">Guardar</button>
           </div>
 

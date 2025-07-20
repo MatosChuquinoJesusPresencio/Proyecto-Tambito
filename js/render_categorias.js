@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('api/categorias.php')
+    fetch('api/render.php')
         .then(res => res.json())
         .then(data => {
             const contenedor = document.querySelector('.hero-content');
