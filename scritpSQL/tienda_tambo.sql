@@ -77,7 +77,7 @@ VALUES
 ('Facebook', 'https://www.facebook.com/TamboMas/', 'Tambo +'),
 ('TikTok', 'https://www.tiktok.com/@tiendas_tambo', 'tiendas_tambo');
 
---Productos
+-- Productos
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(50) UNIQUE NOT NULL,
