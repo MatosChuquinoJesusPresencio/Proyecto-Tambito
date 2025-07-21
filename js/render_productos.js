@@ -41,7 +41,7 @@ function renderizarProductos(data) {
               <div class="product-price">
                 <span class="current-price">S/ ${parseFloat(producto.precio).toFixed(2)}</span>
               </div>
-              <button class="add-to-cart">+</button>
+              <button class="add-to-cart" data-product-id="${producto.codigo}">+</button>
             </div>
           </div>
         </div>
@@ -61,6 +61,15 @@ function renderizarProductos(data) {
           window.openProductModal(productData);
       });
   });
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            const productCard = this.closest('.product-card');
+            const productData = JSON.parse(productCard.dataset.product);
+            añadirProductoAlCarrito(productData);
+        });
+    });
 }
 
 function cargarYRenderizar() {
@@ -77,3 +86,49 @@ function cargarYRenderizar() {
 
 document.addEventListener('DOMContentLoaded', cargarYRenderizar);
 document.addEventListener('productosActualizados', cargarYRenderizar);
+
+function añadirProductoAlCarrito(producto, cantidad = 1) { 
+    fetch('routes/router.php?accion=añadir_carrito', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ ...producto, cantidad_deseada: parseInt(cantidad) })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.estado === 'exito') {
+            console.log('Producto añadido al carrito:', data.mensaje);
+            if (typeof actualizarCarritoVisual === 'function') {
+                actualizarCarritoVisual();
+            }
+            document.getElementById('cart-toggle').checked = true;
+        } else {
+            console.error('Error al añadir producto al carrito:', data.mensaje);
+        }
+    })
+    .catch(error => {
+        console.error('Error en la solicitud de añadir al carrito:', error);
+    });
+}
+
+function actualizarCarritoVisual() {
+    fetch('routes/router.php?accion=obtener_carrito')
+        .then(response => response.json())
+        .then(data => {
+            const cartList = document.querySelector('.cart-sidebar ul');
+            cartList.innerHTML = '';
+            if (data.productos && data.productos.length > 0) {
+                data.productos.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.nombre} - S/ ${(parseFloat(item.precio) * item.cantidad).toFixed(2)} (${item.cantidad} unidades)`;
+                    cartList.appendChild(li);
+                });
+            } else {
+                cartList.innerHTML = '<li>El carrito está vacío.</li>';
+            }
+        })
+        .catch(error => {
+            console.error('Error al obtener productos del carrito para actualizar vista:', error);
+        });
+}

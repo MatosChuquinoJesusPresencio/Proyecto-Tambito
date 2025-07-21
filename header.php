@@ -54,13 +54,11 @@
                     <label for="cart-toggle" class="overlay-cart"></label>
 
                     <div class="cart-sidebar">
-                        <h2>Tu carrito</h2>
-                        <ul>
-                            <li>Producto 1 - $10</li>
-                            <li>Producto 2 - $15</li>
-                            <li>Producto 3 - $20</li>
-                        </ul>
+                        <h2 class="titulo-carrito-slidebar">Tu carrito</h2>
+                        <ul id="cart-items-list">
+                            </ul>
                         <a href="carrito.php" class="checkout-button-carrito">Pagar</a>
+                        <button id="vaciar-carrito-btn" class="vaciar-carrito-btn">Vaciar Carrito</button>
                     </div>
                 </div>
 
@@ -121,6 +119,54 @@
                 document.addEventListener('click', function(event) {
                     if (!userMenuContainer.contains(event.target)) {
                         userDropdownMenu.classList.remove('active');
+                    }
+                });
+            }
+
+            // Función para actualizar la vista del carrito en el sidebar
+            function actualizarCarritoVisual() {
+                fetch('routes/router.php?accion=obtener_carrito')
+                    .then(response => response.json())
+                    .then(data => {
+                        const cartList = document.getElementById('cart-items-list');
+                        cartList.innerHTML = ''; 
+                        if (data.productos && data.productos.length > 0) {
+                            data.productos.forEach(item => {
+                                const li = document.createElement('li');
+                                li.textContent = `${item.nombre} - S/ ${(parseFloat(item.precio) * item.cantidad).toFixed(2)} (${item.cantidad} unidades)`;
+                                cartList.appendChild(li);
+                            });
+                        } else {
+                            cartList.innerHTML = '<li>El carrito está vacío.</li>';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error al obtener productos del carrito para actualizar vista:', error);
+                    });
+            }
+
+            // Cargar el carrito al cargar la página
+            actualizarCarritoVisual();
+
+            // Evento para el botón "Vaciar Carrito"
+            const vaciarCarritoBtn = document.getElementById('vaciar-carrito-btn');
+            if (vaciarCarritoBtn) {
+                vaciarCarritoBtn.addEventListener('click', function() {
+                    if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+                        fetch('routes/router.php?accion=vaciar_carrito')
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.estado === 'exito') {
+                                    alert(data.mensaje);
+                                    actualizarCarritoVisual();
+                                } else {
+                                    alert('Error al vaciar el carrito: ' + data.mensaje);
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error al vaciar carrito:', error);
+                                alert('Error de conexión al vaciar el carrito.');
+                            });
                     }
                 });
             }

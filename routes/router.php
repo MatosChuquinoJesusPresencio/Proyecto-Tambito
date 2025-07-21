@@ -77,6 +77,30 @@ switch ($accion) {
         $controlador->obtener_datos_inicio();
         break;
 
+    case 'añadir_carrito':
+        require_once '../controllers/CarritoController.php';
+        $controlador = new CarritoController();
+        $controlador->añadirProducto();
+        break;
+
+    case 'obtener_carrito':
+        require_once '../controllers/CarritoController.php';
+        $controlador = new CarritoController();
+        $controlador->obtenerCarrito();
+        break;
+
+    case 'vaciar_carrito':
+        require_once '../controllers/CarritoController.php';
+        $controlador = new CarritoController();
+        $controlador->vaciarCarrito();
+        break;
+
+    case 'procesar_pago':
+        require_once '../controllers/CarritoController.php';
+        $controlador = new CarritoController();
+        $controlador->procesarPago();
+        break;
+
     default:
         header('Content-Type: application/json');
         echo json_encode([

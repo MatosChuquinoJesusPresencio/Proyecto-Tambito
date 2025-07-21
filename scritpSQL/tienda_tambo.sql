@@ -13,6 +13,11 @@ CREATE TABLE IF NOT EXISTS usuarios (
     rol ENUM('usuario', 'admin') DEFAULT 'usuario'
 );
 
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `edad`, `celular`, `direccion`, `email`, `password`, `rol`) VALUES
+(1, 'Admin', 'Tambo', 25, '999999999', 'Av. Margarita 123', 'admin@tambo.pe', '$2y$10$kC/fio02xABuVXZ.fvlemeLpAq/oq0epoM4wLRWx6Iw.9ARXrSQrG', 'admin'),
+(2, 'Pepe', 'Perez', 21, '989898989', 'Av. Primavera 123', 'usuario@tambo.pe', '$2y$10$5qZMfO5tdnHdf5OOEA7fbeNYmoGF8FIqMaUgx4H4e1MRzCKcGjQBK', 'usuario');
+
+
 CREATE TABLE IF NOT EXISTS configuracion_general (
     id INT AUTO_INCREMENT PRIMARY KEY,
     clave VARCHAR(50) NOT NULL UNIQUE,    
@@ -77,7 +82,7 @@ VALUES
 ('Facebook', 'https://www.facebook.com/TamboMas/', 'Tambo +'),
 ('TikTok', 'https://www.tiktok.com/@tiendas_tambo', 'tiendas_tambo');
 
---Productos
+-- Productos
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(50) UNIQUE NOT NULL,

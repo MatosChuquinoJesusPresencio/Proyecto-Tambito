@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const quantityInput = document.getElementById('modal-quantity');
     const quantityMinus = document.getElementById('quantity-minus');
     const quantityPlus = document.getElementById('quantity-plus');
+    let currentProductData = null;
 
     closeButton.addEventListener('click', () => {
         modal.style.display = 'none';
@@ -46,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Controles de cantidad
     quantityMinus.addEventListener('click', () => {
         let currentValue = parseInt(quantityInput.value);
         if (currentValue > 1) {
@@ -59,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
         quantityInput.value = currentValue + 1;
     });
 
-    // Función para abrir el modal con los datos del producto
     window.openProductModal = (product) => {
+        currentProductData = product; 
         document.getElementById('modal-product-image').src = product.imagen_url + '?v=' + Date.now();
         document.getElementById('modal-product-name').textContent = product.nombre;
         document.getElementById('modal-product-price').textContent = parseFloat(product.precio).toFixed(2);
-        quantityInput.value = 1;
+        quantityInput.value = 1; 
 
         const oldPriceElement = document.getElementById('modal-product-old-price');
         const discountBadgeElement = document.getElementById('modal-product-discount');
@@ -85,13 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'flex';
     };
 
-    // Funcionalidad de añadir al carrito (ejemplo básico, integrar con tu lógica de carrito real)
     const addToCartModalButton = document.querySelector('.add-to-cart-modal');
     addToCartModalButton.addEventListener('click', () => {
-        const productName = document.getElementById('modal-product-name').textContent;
-        const productPrice = document.getElementById('modal-product-price').textContent;
-        const quantity = quantityInput.value;
-        alert(`Añadido al carrito: ${quantity} x ${productName} (S/ ${productPrice} c/u)`);
-        modal.style.display = 'none'; 
+        if (currentProductData) {
+            const cantidad = parseInt(quantityInput.value);
+            if (typeof añadirProductoAlCarrito === 'function') {
+                añadirProductoAlCarrito(currentProductData, cantidad);
+                modal.style.display = 'none';
+            } else {
+                console.error('La función añadirProductoAlCarrito no está definida.');
+                alert('Error: La función de añadir al carrito no está disponible.');
+            }
+        } else {
+            alert('No se pudo añadir el producto al carrito. Faltan datos.');
+        }
     });
 });
