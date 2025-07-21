@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
     password VARCHAR(255) NOT NULL,
     rol ENUM('usuario', 'admin') DEFAULT 'usuario'
 );
-/*
+
 CREATE TABLE IF NOT EXISTS configuracion_general (
     id INT AUTO_INCREMENT PRIMARY KEY,
     clave VARCHAR(50) NOT NULL UNIQUE,    
@@ -25,19 +25,18 @@ CREATE TABLE IF NOT EXISTS secciones_inicio (
     imagen_url VARCHAR(255) NOT NULL,
     orden INT NOT NULL                    
 );
-*/
-/*
+
 INSERT INTO configuracion_general (clave, valor)
-VALUES ('slogan', 'Bienvenido a nuestra tienda, calidad garantizada.');
+VALUES ('slogan', 'CADA VEZ MÁS CERCA');
 
 INSERT INTO secciones_inicio (titulo, imagen_url, orden)
 VALUES 
-('Categoria1', 'imagenes/frescos.jpg', 1),
-('Categoria2', 'imagenes/ofertas.jpg', 2),
-('Categoria3', 'imagenes/calidad.jpg', 3),
-('Categoria4', 'imagenes/atencion.jpg', 4),
-('Categoria5', 'imagenes/seguridad.jpg', 5);
-*/
+('Categoria1', 'img/categorias_home/categoria_1_1753031721.png', 1),
+('Categoria2', 'img/categorias_home/categoria_2_1753031721.png', 2),
+('Categoria3', 'img/categorias_home/categoria_3_1753031721.png', 3),
+('Categoria4', 'img/categorias_home/categoria_4_1753031721.png', 4),
+('Categoria5', 'img/categorias_home/categoria_5_1753031721.png', 5);
+
 
 CREATE TABLE IF NOT EXISTS nosotros_info (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -78,21 +77,16 @@ VALUES
 ('Facebook', 'https://www.facebook.com/TamboMas/', 'Tambo +'),
 ('TikTok', 'https://www.tiktok.com/@tiendas_tambo', 'tiendas_tambo');
 
-CREATE TABLE IF NOT EXISTS categorias (
+--Productos
+CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL UNIQUE
-);
-
-CREATE TABLE IF NOT EXISTS productos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    id_categoria INT NOT NULL,
-    nombre VARCHAR(150) NOT NULL,
-    precio DECIMAL(10, 2) NOT NULL,                
-    descuento DECIMAL(5, 2) DEFAULT 0.00,           
-    precio_actual DECIMAL(10, 2) NOT NULL,
+    codigo VARCHAR(50) UNIQUE NOT NULL,
+    nombre VARCHAR(255) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    precio_anterior DECIMAL(10, 2) NULL,
+    descuento INT NULL,
     imagen_url VARCHAR(255) NOT NULL,
-    FOREIGN KEY (id_categoria) REFERENCES categorias(id)
-        ON UPDATE CASCADE ON DELETE RESTRICT
+    categoria VARCHAR(100) NOT NULL
 );
 
 INSERT INTO `productos` (`id`, `codigo`, `nombre`, `precio`, `precio_anterior`, `descuento`, `imagen_url`, `categoria`) VALUES
