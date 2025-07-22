@@ -1,6 +1,7 @@
 .carrito-bg {
     background-image: url('../../img/fondo.jpg');
     background-attachment: fixed;
+    min-height: 80vh;
 }
 
 .cart-panel {
@@ -15,7 +16,6 @@
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     color: white;
-    /* Cambiar todo el texto a blanco */
     z-index: 999;
 }
 

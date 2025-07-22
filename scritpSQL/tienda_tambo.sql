@@ -152,3 +152,19 @@ CREATE TABLE form_postulantes (
     horario_trabajo VARCHAR(255),
     fecha_postulacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE ventas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2) NOT NULL
+);
+
+CREATE TABLE detalles_venta (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    venta_id INT NOT NULL,
+    codigo_producto VARCHAR(255) NOT NULL,
+    nombre_producto VARCHAR(255) NOT NULL,
+    cantidad INT NOT NULL,
+    precio_unitario DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (venta_id) REFERENCES ventas(id) ON DELETE CASCADE
+);
