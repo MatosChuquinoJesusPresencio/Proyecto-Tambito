@@ -1,6 +1,6 @@
 <?php
 // Incluir la lógica del perfil al principio
-include 'perfil_logic.php';
+include 'api/perfil_logic.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,7 +32,7 @@ include 'perfil_logic.php';
                 <button id="view-profile-btn" class="btn-action active-btn">Ver Perfil</button>
                 <button id="edit-profile-btn" class="btn-action">Editar Perfil</button>
                 <button id="change-password-btn" class="btn-action">Cambiar Contraseña</button>
-                <a href="logout.php" class="btn-action btn-logout">Cerrar Sesión</a>
+                <a href="api/logout.php" class="btn-action btn-logout">Cerrar Sesión</a>
             </div>
 
             <div id="view-profile-section" class="profile-section active-section">

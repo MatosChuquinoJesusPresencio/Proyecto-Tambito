@@ -77,7 +77,7 @@
                                 <div class="user-dropdown-menu">
                                     <p>Hola, <br><strong><?php echo htmlspecialchars($_SESSION['nombre'] . ' ' . $_SESSION['apellido']); ?></strong></p>
                                     <a href="perfil.php" class="dropdown-item perfil-btn"><i class="fas fa-user-circle"></i> Ver Perfil</a>
-                                    <a href="logout.php" class="dropdown-item logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                                    <a href="api/logout.php" class="dropdown-item logout-btn"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
                                 </div>
                             </div>
                         <?php

@@ -101,6 +101,18 @@ switch ($accion) {
         $controlador->procesarPago();
         break;
 
+    case 'guardar_comentario':
+        require_once '../controllers/FormularioController.php';
+        $controlador = new FormularioController();
+        $controlador->guardarComentario();
+        break;
+
+    case 'guardar_postulacion':
+        require_once '../controllers/FormularioController.php';
+        $controlador = new FormularioController();
+        $controlador->guardarPostulacion();
+        break;
+
     default:
         header('Content-Type: application/json');
         echo json_encode([

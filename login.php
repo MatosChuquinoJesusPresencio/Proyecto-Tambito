@@ -38,7 +38,7 @@
             }
             ?>
 
-            <form class="login-form" action="validar_usuario.php" method="POST" onsubmit="return validarLogin()">
+            <form class="login-form" action="api/validar_usuario.php" method="POST" onsubmit="return validarLogin()">
                 <div class="input-group">
                     <label for="email">Correo electrónico</label>
                     <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>

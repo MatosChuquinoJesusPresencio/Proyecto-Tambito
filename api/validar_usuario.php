@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conexion.php';
+include '../conexion.php';
 
 $email = $_POST['email'];
 $password = $_POST['password'];
@@ -25,21 +25,21 @@ if ($result->num_rows === 1) {
 
         // Redirigir según el rol
         if ($usuario['rol'] === 'admin') {
-            header("Location: administracion.php");
+            header("Location: ../administracion.php");
         } else {
-            header("Location: index.php");
+            header("Location: ../index.php");
         }
         exit();
     } else {
         // Contraseña incorrecta: Almacenar mensaje en sesión y redirigir
         $_SESSION['error_message'] = "❌ Contraseña incorrecta. Por favor, inténtalo de nuevo.";
-        header("Location: login.php"); // Redirige de vuelta a login.php
+        header("Location: ../login.php"); // Redirige de vuelta a login.php
         exit();
     }
 } else {
     // Usuario no encontrado: Almacenar mensaje en sesión y redirigir
     $_SESSION['error_message'] = "❌ Usuario no encontrado. Por favor, inténtalo de nuevo.";
-    header("Location: login.php"); // Redirige de vuelta a login.php
+    header("Location: ../login.php"); // Redirige de vuelta a login.php
     exit();
 }
 

@@ -37,7 +37,7 @@
             ?>
 
             <!-- Formulario -->
-            <form class="login-form" action="guardar_usuario.php" method="POST" onsubmit="return validarRegistro()">
+            <form class="login-form" action="api/guardar_usuario.php" method="POST" onsubmit="return validarRegistro()">
                 <!-- Nombre -->
                 <div class="input-group">
                     <label for="nombre">Nombre</label>

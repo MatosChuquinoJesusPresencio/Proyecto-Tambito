@@ -129,3 +129,26 @@ INSERT INTO `productos` (`id`, `codigo`, `nombre`, `precio`, `precio_anterior`, 
 (32, 'P031', 'Edición Limitada 750ml', 34.90, 46.90, 25, './img/PRODUCTOS-CATEGORIA/vape7.png', 'Cigarros'),
 (33, 'P032', 'Porter Artesanal 500ml', 22.90, NULL, NULL, './img/PRODUCTOS-CATEGORIA/vape8.png', 'Cigarros');
 
+CREATE TABLE form_comentarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    mensaje TEXT NOT NULL,
+    fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE form_postulantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    apellido VARCHAR(255) NOT NULL,
+    dni VARCHAR(20) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    celular VARCHAR(20) NOT NULL,
+    departamento VARCHAR(255) NOT NULL,
+    provincia VARCHAR(255) NOT NULL,
+    distrito VARCHAR(255) NOT NULL,
+    direccion TEXT NOT NULL,
+    distrito_trabajo VARCHAR(255),
+    horario_trabajo VARCHAR(255),
+    fecha_postulacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

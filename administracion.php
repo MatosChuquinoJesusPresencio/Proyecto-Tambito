@@ -57,7 +57,7 @@ if (!isset($_SESSION['id']) || $_SESSION['rol'] !== 'admin') {
         <label for="tab-categoria">Categoría</label>
       </nav>
 
-      <a href="logout.php" class="cerrar-sesion">Cerrar sesión</a>
+      <a href="api/logout.php" class="cerrar-sesion">Cerrar sesión</a>
 
 
     </div>
